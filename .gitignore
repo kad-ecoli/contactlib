@@ -5,6 +5,7 @@ test.dnn
 test.log
 test.lst
 *.pyc
+*.swp
 src/search/search
 .vscode
 libsearch.so

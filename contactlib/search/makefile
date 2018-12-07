@@ -1,9 +1,9 @@
 CPP=g++ -O3 --std=c++11 -fPIC
 
-all: libsearch.so
+all: libsearch.so search
 
-#search: main.cpp libsearch.so Search.h Common.h
-#	$(CPP) -o $@ main.cpp -L. -lsearch
+search: main.cpp Search.o Common.o Search.h Common.h
+	$(CPP) -o $@ main.cpp Search.o Common.o -static
 
 libsearch.so: Search.o Common.o
 	$(CPP) -shared -o $@ Search.o Common.o
